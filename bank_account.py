@@ -1,4 +1,5 @@
-class bank_account:
+# All classes should be capitalized
+class Bank_Account:
     # whatever is put here is a global variable
     all_bank_accounts = []
     # classmethod is used when you are accessing something global (directly under class), whereas you can use regular def if it is not something global
@@ -8,7 +9,7 @@ class bank_account:
         # instance attributes go here
         self.int_rate = int_rate
         self.balance = balance
-        bank_account.all_bank_accounts.append(self)
+        Bank_Account.all_bank_accounts.append(self)
     def deposit(self, amount):
         self.balance += amount
         return self
@@ -29,11 +30,11 @@ class bank_account:
             print(f"Balance: ${each_balance}")
         # Chain methods of an instance (not a class), so nothing similar to return self is needed. In addition, the goal is just to print here.
         
-account1 = bank_account(0.045, 200)
-account2 = bank_account(0.04, 650)
+account1 = Bank_Account(0.045, 200)
+account2 = Bank_Account(0.04, 650)
 
 # for the methods where there is nothing in parentheses, we are only passing in the self value.
 account1.deposit(433).deposit(153).deposit(48).withdraw(198).yield_interest().display_account_info()
 account2.deposit(212).deposit(119).withdraw(13).withdraw(22).withdraw(29).withdraw(46).yield_interest().display_account_info()
 
-bank_account.all_bank_account_balances()
+Bank_Account.all_bank_account_balances()
